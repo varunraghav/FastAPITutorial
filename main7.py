@@ -14,6 +14,8 @@ app = FastAPI()
     #https://example.com/items/?limit=10&tool=plumbus
     #They will receive an error response telling them that the query parameter tool is not allowed:
 
+#Model request - http://127.0.0.1:8000/items/?limit=10&offset=2&order_by=updated_at&tags=python,fastapi
+
 
 
 class FilterParams(BaseModel):

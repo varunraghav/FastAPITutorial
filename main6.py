@@ -1,20 +1,3 @@
-from typing import Annotated
-
-from fastapi import FastAPI, Path, Query
-
-app = FastAPI()
-
-
-@app.get("/items/{item_id}")
-async def read_items(
-    item_id: Annotated[int, Path(title="The ID of the item to get", ge=1, lt=50)],
-    q: Annotated[str | None, Query(alias="item-query")] = None,
-):
-    results = {"item_id": item_id}
-    if q:
-        results.update({"q": q})
-    return results
-
 """
 Path(...): Adds extra validation, constraints, and documentation for the path parameter.
 title="The ID of the item to get": Adds a description for item_id in the automatically generated API docs.
@@ -32,3 +15,22 @@ http://127.0.0.1:8000/items/0?item-query=test - {"detail":[{"type":"greater_than
 
 
 """
+
+from typing import Annotated
+
+from fastapi import FastAPI, Path, Query
+
+app = FastAPI()
+
+
+@app.get("/items/{item_id}")
+async def read_items(
+    item_id: Annotated[int, Path(title="The ID of the item to get", ge=1, lt=50)],
+    q: Annotated[str | None, Query(alias="item-query")] = None,
+):
+    results = {"item_id": item_id}
+    if q:
+        results.update({"q": q})
+    return results
+
+

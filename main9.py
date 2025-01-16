@@ -1,3 +1,28 @@
+"""
+FastAPI Program: Using Pydantic's Field for Validation and Metadata
+
+Demonstrates:
+1. Validation and metadata for model fields using `Field`.
+2. Embedding request bodies with `Body(embed=True)`.
+
+Endpoint:
+- **PUT /items/{item_id}**: Updates an item with validation on:
+  - `description` (max length: 300).
+  - `price` (must be > 0).
+
+Request Example:
+```json
+{
+    "item": {
+        "name": "Laptop",
+        "description": "A high-end gaming laptop",
+        "price": 1500.0,
+        "tax": 225.0
+    }
+}
+"""
+
+
 from typing import Annotated
 
 from fastapi import Body, FastAPI

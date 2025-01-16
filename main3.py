@@ -1,3 +1,18 @@
+"""
+FastAPI Program: Query and Path Parameters Demonstration
+
+This program demonstrates the use of:
+1. Query parameters for filtering and optional inputs.
+2. Path parameters for identifying specific resources.
+3. Automatic validation of parameters by FastAPI.
+
+Endpoints:
+1. **GET /items/**: Retrieve items from a database with pagination (`skip`, `limit`).
+2. **GET /itemsnn/{item_id}**: Fetch item details using `item_id` and optional `q` and `short` query parameters.
+3. **GET /itemsrq/{item_id}**: Retrieve an item with a required query parameter `needy`.
+
+"""
+
 from fastapi import FastAPI
 
 app = FastAPI()

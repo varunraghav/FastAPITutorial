@@ -1,3 +1,18 @@
+"""
+
+FastAPI Program: Update Items with Optional Query Parameter
+
+Description:
+This program provides an API endpoint to update item details using a combination of:
+1. Path parameters (`item_id`) to specify the item being updated.
+2. Request body (`item`) to provide the updated item details.
+3. Optional query parameters (`q`) to include additional metadata.
+
+Endpoints:
+1. PUT /items/{item_id} - Updates item details and optionally includes the query parameter `q` in the response.
+
+"""
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 

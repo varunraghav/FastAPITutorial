@@ -1,4 +1,24 @@
+"""
+FastAPI Program: Advanced Query Parameter Features
+
+This program demonstrates:
+1. Validation rules for query parameters (length, patterns).
+2. Handling optional and multiple query parameters.
+3. Adding metadata like title, description, and aliases for query parameters.
+
+Endpoints:
+1. **GET /items/**: Validates query parameter `q` (length 3-10, must start with "varun").
+   - Example: `/items/?q=varun`
+2. **GET /items2/**: Accepts multiple values for the query parameter `q`.
+   - Example: `/items2/?q=foo&q=bar` → `{"q": ["foo", "bar"]}`
+3. **GET /items3/**: Adds metadata (title, description) to the query parameter `q` for enhanced documentation.
+   - Example: `/items3/?q=match`
+4. **GET /items4/**: Uses an alias (`item-query`) for the query parameter `q`.
+   - Example: `/items4/?item-query=Foo` → `{"items": [...], "q": "Foo"}`
+"""
+
 #We are going to enforce that even though q is optional, whenever it is provided, its length doesn't exceed 50 characters.
+
 
 from typing import Annotated
 

@@ -1,3 +1,19 @@
+"""
+FastAPI Program: Path and Body Parameters
+
+This program demonstrates:
+1. Path parameters with metadata and validation.
+2. Body parameters with single and multiple Pydantic models.
+3. Use of `Body()` for additional metadata and embedded JSON structures.
+
+Endpoints:
+1. PUT /items/{item_id} - Update an item with optional query and body parameters.
+2. PUT /items2/{item_id} - Update item and user details using Pydantic models.
+3. PUT /items3/{item_id} - Update item, user, and additional importance parameter.
+4. PUT /items4/{item_id} - Use `Body(embed=True)` to modify request structure.
+"""
+
+
 from typing import Annotated
 
 from fastapi import FastAPI, Path, Body

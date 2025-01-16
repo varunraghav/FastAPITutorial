@@ -1,3 +1,7 @@
+"""
+This program explains the basic of path operations
+"""
+
 from fastapi import FastAPI
 from enum import Enum
 
